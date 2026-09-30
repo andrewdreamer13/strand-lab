@@ -3,5 +3,5 @@
 User-agent: *
 Allow: /
 
-# Host & Sitemap (Replace with your client's real domain)
-Sitemap: https://your-client-domain.com/sitemap.xml
+# Host & Sitemap
+Sitemap: https://andrewdreamer13.github.io/strand-lab/sitemap.xml

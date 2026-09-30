@@ -1,10 +1,5 @@
 
-<!--
- * Document head partial template managing page metadata, dynamic SEO tags, social media preview cards, and early color theme initialization.
- * 
- * 1. Dynamic SEO & Social Metadata - Injects custom template variables for primary meta tags, canonical links, Open Graph, and Twitter Card preview configurations.
- * 2. Early Theme Initialization - Synchronously executes an inline script to apply the user's stored or system color theme (`data-theme`) before page render to prevent theme flash (FOUC).
--->
+
 
 <head>
   <meta charset="UTF-8" />
@@ -29,13 +24,10 @@
 
   <meta name="theme-color" content="{=$theme-color}" />
 
-  <link rel="icon" type="image/svg+xml" href="favicon.png" />
+   <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <script>
-    (function () {
-      const savedTheme = localStorage.getItem("theme");
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      document.documentElement.setAttribute("data-theme", savedTheme || systemTheme);
-    })();
-  </script>
 </head>
