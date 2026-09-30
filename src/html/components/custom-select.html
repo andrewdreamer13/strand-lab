@@ -1,0 +1,26 @@
+<div class="select" id="{=$id}">
+
+  <button
+    class="select__button"
+    id="select-button"
+    type="button"
+    aria-haspopup="listbox"
+    aria-expanded="false"
+  >
+    Option 1
+  </button>
+
+  <ul
+    class="select__options"
+    role="listbox"
+  >
+    <!-- Dinamic content from data/customSelect.js and components/customSelect.js -->
+  </ul>
+
+  <input
+    class="select__input"
+    type="hidden"
+    name="{=$name}"
+    value="option-1"
+  />
+</div>

@@ -1,0 +1,33 @@
+@use "../tools" as t;
+
+:root {
+  @include t.generate-theme(t.$light-theme);
+
+  &[data-theme="dark"] {
+    @include t.generate-theme(t.$dark-theme);
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-weight: t.$fwReg;
+  font-size: t.$fsBase;
+  font-family: t.$fontMain, t.$fontAlt;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.card {
+  width: 250px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+}

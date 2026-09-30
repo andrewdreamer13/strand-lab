@@ -1,0 +1,272 @@
+@use "../tools" as t;
+
+@import "flatpickr/dist/flatpickr.min.css";
+@import "flatpickr/dist/plugins/confirmDate/confirmDate.css";
+
+.flatpickr-calendar {
+  width: 100% !important;
+  @include t.fluid-prop("max-width", 270, 310, 320, 825);
+  box-sizing: border-box;
+  border: 1px solid t.$colorBlack;
+  background: t.$colorAccent !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: t.$colorBlack;
+
+  .flatpickr-days,
+  .dayContainer {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .flatpickr-day {
+    max-width: none !important;
+  }
+
+  &::before,
+  &::after {
+    border-bottom-color: t.$colorAccent !important;
+  }
+
+  .flatpickr-months {
+    .flatpickr-month {
+      background: transparent;
+      fill: t.$colorBlack;
+      color: t.$colorBlack;
+    }
+
+    .flatpickr-current-month {
+      color: t.$colorBlack;
+      font-weight: 600;
+
+      .cur-month {
+        color: t.$colorBlack;
+        font-weight: 700;
+      }
+
+      .numInputWrapper {
+        border-radius: 4px;
+        background: transparent;
+        transition: background-color 0.2s ease;
+
+        input.cur-year {
+          padding: 2px 4px;
+          border: none !important;
+          border-radius: 4px;
+          background: transparent !important;
+          box-shadow: none !important;
+          color: t.$colorBlack !important;
+          font-weight: 700;
+        }
+
+        span {
+          border: none;
+          opacity: 1 !important;
+
+          &.arrowUp::after {
+            border-bottom-color: t.$colorBlack !important;
+          }
+          &.arrowDown::after {
+            border-top-color: t.$colorBlack !important;
+          }
+        }
+
+        &:hover,
+        &:focus-within {
+          background: t.$colorBlack !important;
+
+          input.cur-year {
+            color: t.$colorAccent !important;
+          }
+
+          span {
+            &.arrowUp::after {
+              border-bottom-color: t.$colorAccent !important;
+            }
+            &.arrowDown::after {
+              border-top-color: t.$colorAccent !important;
+            }
+
+            &:hover {
+              background: rgba(255, 255, 255, 0.15) !important;
+            }
+          }
+        }
+      }
+    }
+
+    .flatpickr-prev-month,
+    .flatpickr-next-month {
+      fill: t.$colorBlack;
+      color: t.$colorBlack;
+
+      &:hover svg {
+        fill: t.$colorBlack !important;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  span.flatpickr-weekday {
+    background: transparent;
+    color: t.$colorBlack;
+    font-weight: 700;
+  }
+
+  .flatpickr-day {
+    color: t.$colorBlack;
+    transition:
+      color 0.15s ease,
+      background-color 0.15s ease;
+
+    &:not(.flatpickr-disabled):hover,
+    &:not(.flatpickr-disabled):focus {
+      border-color: t.$colorBlack !important;
+      background: t.$colorBlack !important;
+      color: t.$colorAccent !important;
+    }
+
+    &.today {
+      border-color: t.$colorBlack;
+
+      &:not(.flatpickr-disabled):hover {
+        background: t.$colorBlack !important;
+        color: t.$colorAccent !important;
+      }
+    }
+
+    &.flatpickr-disabled,
+    &.flatpickr-disabled:hover {
+      border-color: transparent !important;
+      background: transparent !important;
+      color: rgba(0, 0, 0, 0.25) !important;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &.prevMonthDay,
+    &.nextMonthDay {
+      color: rgba(0, 0, 0, 0.3) !important;
+    }
+
+    &.selected,
+    &.selected:hover {
+      border-color: t.$colorBlack !important;
+      background: t.$colorBlack !important;
+      color: t.$colorAccent !important;
+      font-weight: 700;
+      opacity: 1 !important;
+    }
+  }
+
+  .flatpickr-time {
+    border-top: 1px solid t.$colorBlack !important;
+    background: transparent !important;
+
+    *::selection {
+      background: t.$colorBlack !important;
+      color: t.$colorAccent !important;
+    }
+
+    .flatpickr-time-separator {
+      color: t.$colorBlack !important;
+      font-weight: 700;
+    }
+
+    .flatpickr-am-pm {
+      background: transparent !important;
+      color: t.$colorBlack !important;
+      font-weight: 600;
+
+      &:hover,
+      &:focus,
+      &:active {
+        outline: none;
+        background: t.$colorBlack !important;
+        color: t.$colorAccent !important;
+      }
+    }
+
+    .numInputWrapper {
+      background: transparent !important;
+
+      input {
+        background: transparent !important;
+        box-shadow: none !important;
+        color: t.$colorBlack !important;
+        font-weight: 600;
+
+        &:focus,
+        &:active,
+        &.active {
+          outline: none !important;
+          background: t.$colorBlack !important;
+          box-shadow: none !important;
+          color: t.$colorAccent !important;
+        }
+      }
+
+      span {
+        border: none;
+        opacity: 1 !important;
+
+        &.arrowUp::after {
+          border-bottom-color: t.$colorBlack !important;
+        }
+
+        &.arrowDown::after {
+          border-top-color: t.$colorBlack !important;
+        }
+      }
+
+      &:hover,
+      &:focus-within {
+        background: t.$colorBlack !important;
+
+        input {
+          background: transparent !important;
+          color: t.$colorAccent !important;
+        }
+
+        span {
+          &.arrowUp::after {
+            border-bottom-color: t.$colorAccent !important;
+          }
+          &.arrowDown::after {
+            border-top-color: t.$colorAccent !important;
+          }
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.15) !important;
+          }
+        }
+      }
+    }
+  }
+
+  .flatpickr-confirm {
+    padding: 12px 10px;
+    border-top: 1px solid t.$colorBlack;
+    background: t.$colorBlack !important;
+    color: t.$colorAccent !important;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: opacity 0.2s ease;
+
+    svg {
+      display: none !important;
+    }
+
+    &:hover {
+      background: t.$colorBlack !important;
+      color: t.$colorAccent !important;
+      opacity: 0.85;
+    }
+
+    &.darkTheme {
+      background: t.$colorBlack !important;
+      color: t.$colorAccent !important;
+    }
+  }
+}

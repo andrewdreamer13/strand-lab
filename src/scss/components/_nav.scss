@@ -1,0 +1,17 @@
+@use "../tools" as t;
+
+.nav {
+    width: 100%;
+    max-width: 300px;
+   
+    &__list {
+        width: 100%;
+        @include t.flex-mix(space-between,center,row,10px);
+    }
+
+    &__item {
+    }
+
+    &__link {
+    }
+}

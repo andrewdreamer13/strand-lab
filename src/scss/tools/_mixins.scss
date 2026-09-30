@@ -1,0 +1,114 @@
+@use "sass:map";
+@use "functions" as f;
+
+@mixin font-face($font-name, $file-name, $weight: 400, $style: normal) {
+  @font-face {
+    font-family: "#{$font-name}";
+    src: url("#{$file-name}.woff2") format("woff2");
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@mixin flex-mix($justify: center, $align: center, $direction: row, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap; 
+}
+
+@mixin grid-minmax($repeat, $min, $max, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($repeat, minmax($min, $max));
+  gap: #{$gap};
+}
+
+@mixin grid-repeat($columns, $width, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($columns, $width);
+  gap: $gap; 
+}
+
+@mixin grid-auto-fit($min-width, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min($min-width, 100%), 1fr));
+  gap: $gap; 
+}
+
+// Super clamp
+
+@mixin fluid-prop($prop, $min-px, $max-px, $min-width: 320, $max-width: 1920) {
+  $min-rem: f.rem($min-px);
+  $max-rem: f.rem($max-px);
+  
+  $slope: calc(($max-px - $min-px) / ($max-width - $min-width));
+  $intercept: calc($min-px - $slope * $min-width);
+  $intercept-rem: f.rem($intercept);
+
+  //  #{$prop} will substitute any property you write
+  #{$prop}: clamp(
+    #{$min-rem}, 
+    #{$intercept-rem} + #{$slope * 100}vw, 
+    #{$max-rem}
+  );
+}
+
+// Clamp for all units of measurement
+
+@mixin fluid-range($prop, $min, $max, $min-width: 320px, $max-width: 768px) {
+  #{$prop}: clamp(
+    #{$min},
+    calc(
+      #{$min} + (#{f.strip-unit($max - $min)}) *
+        ((100vw - #{$min-width}) / #{f.strip-unit($max-width - $min-width)})
+    ),
+    #{$max}
+  );
+}
+
+// mixin line clamp
+
+@mixin line-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// mixin for theme changing
+
+@mixin apply-theme($theme-map) {
+  // We iterate over the map and create custom browser properties
+  --theme-bg: #{map.get($theme-map, "bg")};
+  --theme-text: #{map.get($theme-map, "text")};
+  --theme-accent: #{map.get($theme-map, "accent")};
+
+  // We immediately tell the elements to use these variables
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  
+  // Let's add some smoothness to make it pleasing to the eyes.
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+// mixin for theme changing
+
+@mixin generate-theme($theme-map) {
+  @each $key, $value in $theme-map {
+    --color-#{$key}: #{$value};
+  }
+}
+
+// mixin for animations
+
+@mixin fade-in($duration: 0.5s, $delay: 0s) {
+  opacity: 0;
+  animation: fadeIn $duration ease forwards $delay;
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}

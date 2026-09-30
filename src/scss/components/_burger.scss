@@ -1,0 +1,49 @@
+@use "../tools" as t;
+
+
+.burger {
+  display: none;
+  z-index: 1000;
+  position: relative;
+  width: 49px;
+  height: 49px;
+  border-radius: 15px;
+  background-color: #cccccc;
+
+  @media (max-width: 1200px) {
+    @include t.flex-mix(center, center, column, 5px);
+  }
+
+  .line {
+    display: block;
+    width: 25px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #166e94;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+
+  &.is-active {
+    .line-top {
+      transform: translateY(4px) rotate(45deg);
+    }
+
+    .line-bottom {
+      transform: translateY(-4px) rotate(-45deg);
+    }
+
+    .line-mid {
+      display: none;
+    }
+  }
+
+  &:hover .line {
+    background-color: #cc5ffd;
+  }
+  &:active .line {
+    background-color:  #fdc05f;
+  }
+
+  
+}

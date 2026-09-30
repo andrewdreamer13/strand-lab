@@ -1,0 +1,9 @@
+@use "../tools" as t;
+@import "plyr/dist/plyr.css";
+
+:root {
+  --plyr-color-main: #ff0000; // Твой основной цвет (акценты)
+  --plyr-video-control-background-hover: #333; // Цвет кнопок при наведении
+  --plyr-control-radius: 8px; // Можно сделать кнопки скругленными
+  --plyr-control-icon-size: 25px; // Размер самих иконок
+}

@@ -1,0 +1,57 @@
+@use "../tools" as t;
+
+.accordion {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border:1px solid;
+
+    &__item {
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+
+    &__heading {
+      background-color: #444343;
+    }
+
+    &__button {
+        display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    }
+
+    &__button[aria-expanded="true"] &__icon {
+    transform: rotate(180deg);
+  }
+
+    &__title {
+      text-align: center;
+    }
+
+    &__icon {
+       transition: transform 0.3s ease;
+    flex-shrink: 0;
+    }
+
+    &__content {
+       overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+     padding: 0 10px;
+
+    }
+
+    &__content-body {
+       padding: 20px 0;
+    }
+
+    &__content-text {
+    }
+}
+
+

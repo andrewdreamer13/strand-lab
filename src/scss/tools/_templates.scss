@@ -1,0 +1,15 @@
+@use "vars" as v;
+
+ 
+ // scss templates are declared with' %template-name' and then called with '@extend %template-name'
+
+ %linkBorder {
+  // border: 1px dashed v.$text-main;
+ }
+
+ // another way to declare a template  is without '%'. In this we will get a new class in css file
+
+ .linkStyle {
+  // color: v.$bg-main;
+  // background-color: v.$text-main;
+ }

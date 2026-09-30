@@ -1,0 +1,29 @@
+
+@use "../tools" as t;
+
+.logo {
+  border:1px solid var(--theme-accent);
+  border-radius: .5em ;
+  padding: .3em 1em ;
+  font-size: 32px;
+  color:var(--theme-accent);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: var(--theme-accent);
+    color:rgba(var(--theme-bg));
+    
+  }
+
+  &:active {
+    transform: translateY(0); 
+  }
+}
+
+@media (max-width: 768px) {
+.logo {
+  font-size: 22px;
+}
+
+  
+}

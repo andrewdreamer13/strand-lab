@@ -1,0 +1,105 @@
+@use "../tools" as t;
+
+.form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+
+  border: 1px solid;
+  @include t.flex-mix(flex-start, flex-start, column, 25px);
+
+  &__input-box {
+    position: relative;
+    width: 100%;
+    height: 49px;
+
+    &--textarea {
+      height: auto;
+      min-height: 48px;
+    }
+    
+    &._is-invalid {
+      .form__error {
+        visibility: visible;
+        color: t.$colorError;
+        opacity: 1;
+      }
+    }
+
+    &._is-valid {
+      .form__error {
+        visibility: visible;
+        color: t.$colorSuccess;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__label {
+    display: none;
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    padding: 16px 20px;
+    border-radius: 15px;
+    background: #666565;
+    box-shadow: 0 0 8px 0 rgba(66, 83, 69, 0.14);
+    color: var(--color-text);
+    // text-transform: capitalize;
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 8px 0 var(--color-text);
+    }
+
+    &::placeholder {
+      color: var(--color-text);
+      font-size: 14px;
+      opacity: 1;
+    }
+  }
+
+  &__error {
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 3px 20px;
+    color: t.$colorError;
+    font-size: 12px;
+    opacity: 0;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      color 0.3s ease;
+  }
+
+  &__textarea {
+    width: 100%;
+    height: 49px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background: t.$colorWhite;
+    box-shadow: 0 0 8px 0 rgba(66, 83, 69, 0.14);
+    color: var(--color-text);
+    text-transform: capitalize;
+    resize: none;
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 8px 0 var(--color-text);
+    }
+
+    &::placeholder {
+      color: var(--color-text);
+      font-size: 14px;
+      opacity: 1;
+    }
+  }
+
+  &__submit {
+  }
+}

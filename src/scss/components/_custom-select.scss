@@ -1,0 +1,119 @@
+@use "../tools" as t;
+
+.select {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 400px;
+
+  &__button {
+    position: relative;
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    background-color: #959393;
+    color: #fff;
+    font-size: 17px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    text-align: left;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+
+    &.is-selected {
+      color: t.$colorBlack;
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+
+      width: 0;
+      height: 0;
+
+      transform: translateY(-50%);
+      transform-origin: center;
+      border-width: 12px 7px 0;
+
+      border-style: solid;
+      border-color: #fff transparent transparent;
+
+      content: "";
+
+      transition: transform 0.3s;
+    }
+
+    &.rotate::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 3px;
+    }
+  }
+
+  &__options {
+    visibility: hidden;
+    z-index: 10;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    // width: 100%;
+     width: max-content;
+     interpolate-size: allow-keywords;
+    max-height: 0;
+    overflow: clip;
+    background-color: #c1c1c1;
+    box-shadow: 0 0 10px rgb(0 0 0 / 15%);
+    transition:
+      max-height 0.3s,
+      visibility 0.3s;
+  }
+
+  &__options--visible {
+    visibility: visible;
+    // max-height: 300px;
+     max-height: max-content;
+    // overflow-y: auto;
+  }
+
+  &__option {
+    padding: 15px 20px;
+
+    color: #fff;
+    font-size: 17px;
+
+    font-family: sans-serif;
+    letter-spacing: 1px;
+
+    list-style: none;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: #a4a4a4;
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: -2px;
+    }
+  }
+}
+
+.select-1 button {
+  background-color: #e41c1c;
+}
+.select-2 button {
+  background-color: #090cc2;
+}

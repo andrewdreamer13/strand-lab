@@ -1,0 +1,14 @@
+@use "sass:math";
+
+@function rem($pixel) {
+  @return calc($pixel / 16) + rem;
+}
+
+@function getSize($multiplier: 1) {
+  @return #{$multiplier * 5}px;
+}
+
+
+@function strip-unit($value) {
+  @return math.div($value, ($value * 0 + 1));
+}

@@ -1,0 +1,21 @@
+
+
+{
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": false,
+  "bracketSameLine": false,
+  "singleAttributePerLine": true,
+  "plugins": ["prettier-plugin-css-order"],
+  "cssDeclarationSorterOrder": "smacss",
+  "overrides": [
+    {
+      "files": "*.scss",
+      "options": {
+        "parser": "scss"
+      }
+    }
+  ]
+}

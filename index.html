@@ -1,0 +1,123 @@
+
+<!doctype html>
+<html lang="en">
+  <load
+    src="/src/html/components/head.html"
+    title="[Page Title: 60-70 characters max. Brand name + primary keyword]"
+    description="[Page Description: 150-160 characters max. Engaging snippet for Google search results]"
+    keywords="[Comma-separated keywords. E.g.: hvac design, ventilation installation, custom kitchen]"
+    site-url="https://[your-client-domain.com]/"
+    og-image="img/og-preview.jpg"
+    theme-color="[HEX color code for mobile browsers address bar. E.g.: #0f172a]"
+  />
+  <body>
+    <!-- the way to use vite-plugin-html-inject -->
+    <load src="/src/html/sections/header.html" />
+    <load src="/src/html/sections/hero.html" />
+
+    <main>
+      <!-- ways to the images -->
+      <img
+        class="image"
+        src="src/assets/img/webp/beach.webp"
+        alt="beach"
+        loading="lazy"
+        width="550"
+        height="385"
+      />
+
+      <load src="/src/html/components/accordion.html" />
+      <load src="/src/html/components/main-slider.html" />
+      <load src="/src/html/components/tabs.html" />
+      <load
+        class="form-test"
+        src="/src/html/components/form.html"
+        id="form1"
+      />
+    </main>
+    <!-- the way to use vite-plugin-html-inject -->
+    <load src="/src/html/components/modal-content1.html" />
+    <load src="/src/html/components/modal-content2.html" />
+    <load src="/src/html/components/modal-success.html" />
+    <load src="/src/html/components/preloader.html" />
+    <load src="/src/html/components/cookie-banner.html" />
+
+    <load src="/src/html/sections/footer.html" />
+
+    <div class="card">
+      <h2 class="card__title">Card title</h2>
+      <p class="card__text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam sequi
+        ipsa ex libero dicta fugit, similique molestiae officia omnis iste?
+      </p>
+    </div>
+    <!-- html code for lazySvgLoader with templates -->
+    <div
+      class="icon-wrapper"
+      data-svg-receiver
+      data-svg-id="vent"
+    ></div>
+    <div
+      class="icon-wrapper"
+      data-svg-receiver
+      data-svg-id="vent"
+    ></div>
+    <div
+      class="icon-wrapper"
+      data-svg-receiver
+      data-svg-id="vent"
+    ></div>
+
+    <!-- html code for lazySvgLoader with fetch -->
+
+    <div
+      class="icon-wrapper"
+      data-svg-receiver
+      data-svg-id="vent"
+      data-svg-src="/src/html/inline-icons/vent.html"
+    ></div>
+
+    <!-- html code for lazyMapLoader -->
+
+    <!-- Standart iframe -->
+    <div
+      class="map-receiver"
+      data-map-receiver
+      data-map-type="iframe"
+      data-map-src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d164163.50631451618!2d36.3018588!3d49.9915823!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sua!4v1784274912178!5m2!1sen!2sua"
+    ></div>
+
+    <!-- Custom map  -->
+    <div
+      class="map-receiver"
+      data-map-receiver
+      data-map-type="custom"
+      data-map-id="london-office"
+      data-map-lat="51.5074"
+      data-map-lng="-0.1278"
+    ></div>
+
+    <!-- local video -->
+    <div
+      class="video-wrapper"
+      data-video-receiver
+      data-video-type="local"
+      data-video-src="/assets/video/test-video.webm"
+      data-video-poster="/assets/img/poster.webp"
+    ></div>
+
+    <!-- youtube video -->
+    <div
+      class="video-wrapper"
+      data-video-receiver
+      data-video-type="youtube"
+      data-video-src="dQw4w9WgXcQ"
+      data-video-poster="/assets/img/poster.webp"
+    ></div>
+
+    <script
+      type="module"
+      src="/src/js/main.js"
+    ></script>
+  </body>
+</html>

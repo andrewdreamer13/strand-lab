@@ -1,0 +1,51 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  max-width: 100%;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: middle;
+  transition:
+    fill 0.15s ease,
+    stroke 0.15s ease;
+
+  :where([fill]:not([fill="none"], [fill^="url"])) {
+    fill: currentColor;
+  }
+
+  :where([stroke]:not([stroke="none"], [stroke^="url"])) {
+    stroke: currentColor;
+  }
+}
+
+.svg-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  fill: currentColor;
+
+  transition:
+    fill 0.2s ease,
+    stroke 0.2s ease;
+
+  :where([fill]:not([fill="none"], [fill^="url"])) {
+    fill: currentColor;
+  }
+
+  :where([stroke]:not([stroke="none"], [stroke^="url"])) {
+    stroke: currentColor;
+  }
+}
+
+.icon-phone {
+  width: 32px;
+  height: 32px;
+  fill: #78c081;
+  stroke: #577a5b;
+
+  &:hover {
+    fill: #577a5b;
+    stroke: #78c081;
+  }
+}

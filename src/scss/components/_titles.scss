@@ -1,0 +1,8 @@
+@use "../tools" as t;
+
+.title {
+  text-align: center;
+   @include t.fluid-prop("font-size",32, 100);
+   @include t.fluid-prop("margin-bottom",20, 60);
+   color: var(--theme-text);
+}

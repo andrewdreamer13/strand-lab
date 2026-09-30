@@ -1,0 +1,41 @@
+
+<!--
+ * Document head partial template managing page metadata, dynamic SEO tags, social media preview cards, and early color theme initialization.
+ * 
+ * 1. Dynamic SEO & Social Metadata - Injects custom template variables for primary meta tags, canonical links, Open Graph, and Twitter Card preview configurations.
+ * 2. Early Theme Initialization - Synchronously executes an inline script to apply the user's stored or system color theme (`data-theme`) before page render to prevent theme flash (FOUC).
+-->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{=$title}</title>
+  <meta name="description" content="{=$description}" />
+  <meta name="keywords" content="{=$keywords}" />
+  <link rel="canonical" href="{=$site-url}" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{=$site-url}" />
+  <meta property="og:title" content="{=$title}" />
+  <meta property="og:description" content="{=$description}" />
+  <meta property="og:image" content="{=$site-url}{=$og-image}" />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="{=$site-url}" />
+  <meta property="twitter:title" content="{=$title}" />
+  <meta property="twitter:description" content="{=$description}" />
+  <meta property="twitter:image" content="{=$site-url}{=$og-image}" />
+
+  <meta name="theme-color" content="{=$theme-color}" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.png" />
+
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", savedTheme || systemTheme);
+    })();
+  </script>
+</head>

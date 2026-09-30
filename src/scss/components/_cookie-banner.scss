@@ -1,0 +1,95 @@
+@use "../tools" as t;
+
+.cookie-banner {
+  display: none;
+  z-index: 9999;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+
+  &--show {
+   display: block;
+   @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    animation: slideUp 0.5s forwards;
+  }
+  
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 15px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    pointer-events: auto;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-shrink: 0;
+    gap: 10px;
+  }
+
+  &__btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+
+    &--accept {
+      background-color: #000;
+      color: #fff;
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: #333;
+        }
+      }
+    }
+
+    &--decline {
+      background-color: #f0f0f0;
+      color: #333;
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: #e0e0e0;
+        }
+      }
+    }
+
+    &:active {
+      transform: scale(0.97);
+    }
+  }
+}
