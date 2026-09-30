@@ -4,65 +4,16 @@
 $fontTitle: 'Cormorant Garamond', 'Georgia', serif;
 $fontText: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-$fwLight:  300;
-$fwReg:    400;
-$fwMedium: 500;
-$fwBold:   700;
-
-$fsBase: 16px;
-
-// Spacing and Layout
-$spaceXs: 4px;
-$spaceSm: 8px;
-$spaceMd: 16px;
-$spaceLg: 24px;
-$spaceXl: 48px;
-
-$zNegative: -1;
-$zBase:      1;
-$zHeader:  100;
-
-// Absolute Colors
-$colorWhite: #ffffff;
-$colorBlack: #151515;
-
-// Light Theme Palette
-$colorLightBg:          #ffffff;
-$colorLightBgSecondary: #f4f4f4;
-$colorLightBorder:      #dddddd;
-$colorLightText:        #333333; 
-$colorLightTitle:       #1a1a1a; 
-
-// Dark Theme Palette
-$colorDarkBg:          #171919;
-$colorDarkBgSecondary: #252828;
-$colorDarkBorder:      #333333;
-$colorDarkText:        #cccccc; 
-$colorDarkTitle:       #ffffff; 
-
-// Brand Colors
-$colorAccent: #4af6cd;
+// Color Palette
+$colorOne:   #1e1e1e; // Rich Charcoal
+$colorTwo:   #fdf7ed; // Soft Cream
+$colorThree: #6b1d2f; // Luxury Burgundy
+$colorFour:  #bfa075; // Golden Accent
+$colorFive:  #e0e0e0; // Cool Grey
+$colorSix:   #4a4a4a; // Dark Grey
 
 // System and Status Colors
 $colorError:    #ff4d4d;
 $colorSuccess:  #2ecc71;
 $colorModalBg:  #000000d1;
 
-// Theme Maps
-$light-theme: (
-  "bg":          $colorLightBg,
-  "bgSecondary": $colorLightBgSecondary,
-  "text":        $colorLightText,
-  "title":       $colorLightTitle, 
-  "accent":      $colorAccent,
-  "border":      $colorLightBorder
-);
-
-$dark-theme: (
-  "bg":          $colorDarkBg,
-  "bgSecondary": $colorDarkBgSecondary,
-  "text":        $colorDarkText,
-  "title":       $colorDarkTitle, 
-  "accent":      $colorAccent,
-  "border":      $colorDarkBorder
-);
