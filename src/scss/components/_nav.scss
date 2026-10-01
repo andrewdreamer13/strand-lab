@@ -1,17 +1,75 @@
 @use "../tools" as t;
 
 .nav {
+  width: max-content;
+  height: 100%;
+
+
+  &__list {
     width: 100%;
-    max-width: 300px;
-   
-    &__list {
+    @include t.flex-mix(flex-start, center, row, 30px);
+  }
+  
+
+    @media (max-width: 1024px) {
+      display: block;
+      visibility: hidden;
+      z-index: 100;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      padding-top: 150px;
+      overflow: hidden;
+      transform: translateY(-100%);
+      background-color: t.$colorFour;
+      opacity: 0;
+      pointer-events: none;
+      transition:
+        transform 0.5s ease,
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+
+      &.is-open {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav__list {
         width: 100%;
-        @include t.flex-mix(space-between,center,row,10px);
+        @include t.flex-mix(center, center, column, 30px);
+      }
+    
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: transform 0.3s ease;
+
+    &::after {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      opacity: 0;
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
     }
 
-    &__item {
-    }
+    @media (hover: hover) {
+      &:hover {
+      }
 
-    &__link {
+      &:hover::after {
+      }
     }
+  }
 }

@@ -1,0 +1,19 @@
+@use "../tools" as t;
+.lang-switcher {
+
+    &__link {
+      text-transform: capitalize;
+      font-size: 18px;
+      font-weight: 500;
+
+        &.active {
+      color:t.$colorThree;
+    }
+    }
+
+    &__divider {
+       font-size: 18px;
+    }
+
+  
+}

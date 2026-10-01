@@ -1,19 +1,12 @@
 
-/**
- * Initializes the responsive mobile navigation burger menu, managing UI state classes, accessibility attributes, Escape key listeners, and focus trapping.
- * 
- * 1. `initBurger` - Sets up toggle events for the burger button and menu, manages body scroll locks and ARIA states, handles Escape key closing, traps focus within the active menu via `focusManager`, and auto-closes upon link navigation.
- */
-
 import { openScope, closeScope } from "../services/focusManager.js";
 
-export const initBurger = (btnSelector, menuSelector, listSelector) => {
+export const initBurger = (btnSelector, menuSelector) => {
   const burger = document.querySelector(btnSelector);
   const menu = document.querySelector(menuSelector);
 
   if (!burger || !menu) return;
 
-  const list = menu.querySelector(listSelector);
   const body = document.body;
   const isMenuOpen = () => menu.classList.contains("is-open");
 
@@ -26,7 +19,7 @@ export const initBurger = (btnSelector, menuSelector, listSelector) => {
   const openMenu = () => {
     burger.classList.add("is-active");
     menu.classList.add("is-open");
-    body.classList.add("menu-open");
+    body.classList.add("lock");
 
     burger.setAttribute("aria-expanded", "true");
     burger.setAttribute("aria-label", "Close menu");
@@ -38,7 +31,7 @@ export const initBurger = (btnSelector, menuSelector, listSelector) => {
   const closeMenu = () => {
     burger.classList.remove("is-active");
     menu.classList.remove("is-open");
-    body.classList.remove("menu-open");
+    body.classList.remove("lock");
 
     burger.setAttribute("aria-expanded", "false");
     burger.setAttribute("aria-label", "Open menu");
@@ -63,8 +56,10 @@ export const initBurger = (btnSelector, menuSelector, listSelector) => {
       return;
     }
 
-    if (list && e.target === list) {
+   
+    if (e.target === menu) {
       closeMenu();
     }
   });
 };
+

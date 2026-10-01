@@ -5,22 +5,21 @@
   display: none;
   z-index: 1000;
   position: relative;
-  width: 49px;
-  height: 49px;
-  border-radius: 15px;
-  background-color: #cccccc;
+  width: 48px;
+  height: 48px;
 
-  @media (max-width: 1200px) {
-    @include t.flex-mix(center, center, column, 5px);
+  @media (max-width: 1024px) {
+     @include t.flex-mix(center, center, column, 5px);
   }
 
   .line {
     display: block;
-    width: 25px;
-    height: 2px;
-    border-radius: 1px;
-    background-color: #166e94;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 30px;
+    height: 3px;
+    border-radius: 1.5px;
+    background-color: t.$colorOne;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+    
   }
 
 
@@ -38,11 +37,15 @@
     }
   }
 
+  @media (hover:hover) {
   &:hover .line {
-    background-color: #cc5ffd;
+    background-color: t.$colorThree;
   }
+  }
+
+
   &:active .line {
-    background-color:  #fdc05f;
+    
   }
 
   

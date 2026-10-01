@@ -42,7 +42,7 @@ import { initStickyHeader } from "./services/stickyHeader.js";
 document.addEventListener("DOMContentLoaded", () => {
   console.log("The project works");
   initPreloader();
-  initBurger("#burger", ".nav", ".nav__list");
+  initBurger("#burger", ".nav");
   initSliders();
   initChangeTheme("#theme");
   initModal();

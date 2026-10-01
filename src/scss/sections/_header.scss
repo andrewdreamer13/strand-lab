@@ -2,25 +2,45 @@
 
 .header {
   z-index: 100;
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  will-change: transform; 
   background-color: transparent;
 
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+  will-change: transform;
+
   &--scrolled {
-    background-color: gray;
+    background-color: rgba(t.$colorFour, 0.8);
   }
 
   &--hidden {
     transform: translateY(-100%);
   }
-  
+
   &__inner {
     width: 100%;
-    @include t.flex-mix(space-between, center,row,20px);
+    @include t.flex-mix(space-between, center, row, 30px);
+    padding: 10px 15px 0 15px;
+
+    @media (max-width:576px) {
+    padding: 10px 0 0 0;
+
+    }
+  }
+
+  .header__right {
+    display: flex;
+    align-items: center;
+    gap: 50px;
   }
 }
+
+
+
+
+
+

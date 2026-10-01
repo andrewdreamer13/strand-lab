@@ -1,61 +1,30 @@
-<header
-  class="header"
-  id="header"
->
-  <div class="header__inner">
-    <a
-      class="logo"
-      href="/"
-    >
-      Logo
-    </a>
 
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a
-            class="nav__link"
-            href="404.html"
-            >page 404</a
-          >
-        </li>
-        <li class="nav__item">
-          <a
-            class="nav__link"
-            href="#!"
-            >nav link</a
-          >
-        </li>
-        <li class="nav__item">
-          <a
-            class="nav__link"
-            href="#!"
-            >nav link</a
-          >
-        </li>
-      </ul>
-    </nav>
 
-    <a
-      href="tel:+12345678"
-      class="header__phone"
-    >
-      <svg
-        class="icon-phone"
-        width="20"
-        height="20"
-      >
-        <use href="#icons-phone"></use>
-      </svg>
-    </a>
-    <button
-      class="btn-primary"
-      id="theme"
-      aria-label="change theme"
-    >
-      change theme
-    </button>
+<header class="header" id="header">
+  <div class="container">
+    <div class="header__inner">
+        <a class="logo" href="#hero">
+        <img class="logo__img" src="/src/assets/img/webp/logo.webp" alt="Logo" width="52" height="60">
+      </a>
+       <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="#simtoms">simptoms</a></li>
+          <li class="nav__item"><a class="nav__link" href="#assessment">assessment</a></li>
+          <li class="nav__item"><a class="nav__link" href="#treatments">treatments</a></li>
+           <li class="nav__item"><a class="nav__link" href="results">results</a></li>
+          <li class="nav__item"><a class="nav__link" href="#questions">questions</a></li>
+          <li class="nav__item"><a class="nav__link" href="#footer">contacts</a></li>
+        </ul>
+      </nav>
+      
+     <div class="header__right">
+        <div class="lang-switcher">
+          <a href="index.html" class="lang-switcher__link active" hreflang="en" lang="en">en</a>
+          <span class="lang-switcher__divider" aria-hidden="true">/</span>
+          <a href="index-de.html" class="lang-switcher__link" hreflang="de" lang="de">de</a>
+        </div>
 
-    <load src="/src/html/components/burger.html" />
+        <load src="/src/html/components/burger.html" />
+      </div>
   </div>
 </header>

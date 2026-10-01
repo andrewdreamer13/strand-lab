@@ -7,10 +7,10 @@
   width: 100% !important;
   @include t.fluid-prop("max-width", 270, 310, 320, 825);
   box-sizing: border-box;
-  border: 1px solid t.$colorBlack;
-  background: t.$colorAccent !important;
+  border: 1px solid t.$colorOne;
+  background: t.$colorThree !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  color: t.$colorBlack;
+  color: t.$colorOne;
 
   .flatpickr-days,
   .dayContainer {
@@ -25,22 +25,22 @@
 
   &::before,
   &::after {
-    border-bottom-color: t.$colorAccent !important;
+    border-bottom-color: t.$colorThree !important;
   }
 
   .flatpickr-months {
     .flatpickr-month {
       background: transparent;
-      fill: t.$colorBlack;
-      color: t.$colorBlack;
+      fill: t.$colorOne;
+      color: t.$colorOne;
     }
 
     .flatpickr-current-month {
-      color: t.$colorBlack;
+      color: t.$colorOne;
       font-weight: 600;
 
       .cur-month {
-        color: t.$colorBlack;
+        color: t.$colorOne;
         font-weight: 700;
       }
 
@@ -55,7 +55,7 @@
           border-radius: 4px;
           background: transparent !important;
           box-shadow: none !important;
-          color: t.$colorBlack !important;
+          color: t.$colorOne !important;
           font-weight: 700;
         }
 
@@ -64,27 +64,27 @@
           opacity: 1 !important;
 
           &.arrowUp::after {
-            border-bottom-color: t.$colorBlack !important;
+            border-bottom-color: t.$colorOne !important;
           }
           &.arrowDown::after {
-            border-top-color: t.$colorBlack !important;
+            border-top-color: t.$colorOne !important;
           }
         }
 
         &:hover,
         &:focus-within {
-          background: t.$colorBlack !important;
+          background: t.$colorOne !important;
 
           input.cur-year {
-            color: t.$colorAccent !important;
+            color: t.$colorThree !important;
           }
 
           span {
             &.arrowUp::after {
-              border-bottom-color: t.$colorAccent !important;
+              border-bottom-color: t.$colorThree !important;
             }
             &.arrowDown::after {
-              border-top-color: t.$colorAccent !important;
+              border-top-color: t.$colorThree !important;
             }
 
             &:hover {
@@ -97,11 +97,11 @@
 
     .flatpickr-prev-month,
     .flatpickr-next-month {
-      fill: t.$colorBlack;
-      color: t.$colorBlack;
+      fill: t.$colorOne;
+      color: t.$colorOne;
 
       &:hover svg {
-        fill: t.$colorBlack !important;
+        fill: t.$colorOne !important;
         opacity: 0.7;
       }
     }
@@ -109,29 +109,29 @@
 
   span.flatpickr-weekday {
     background: transparent;
-    color: t.$colorBlack;
+    color: t.$colorOne;
     font-weight: 700;
   }
 
   .flatpickr-day {
-    color: t.$colorBlack;
+    color: t.$colorOne;
     transition:
       color 0.15s ease,
       background-color 0.15s ease;
 
     &:not(.flatpickr-disabled):hover,
     &:not(.flatpickr-disabled):focus {
-      border-color: t.$colorBlack !important;
-      background: t.$colorBlack !important;
-      color: t.$colorAccent !important;
+      border-color: t.$colorOne !important;
+      background: t.$colorOne !important;
+      color: t.$colorThree !important;
     }
 
     &.today {
-      border-color: t.$colorBlack;
+      border-color: t.$colorOne;
 
       &:not(.flatpickr-disabled):hover {
-        background: t.$colorBlack !important;
-        color: t.$colorAccent !important;
+        background: t.$colorOne !important;
+        color: t.$colorThree !important;
       }
     }
 
@@ -151,39 +151,39 @@
 
     &.selected,
     &.selected:hover {
-      border-color: t.$colorBlack !important;
-      background: t.$colorBlack !important;
-      color: t.$colorAccent !important;
+      border-color: t.$colorOne !important;
+      background: t.$colorOne !important;
+      color: t.$colorThree !important;
       font-weight: 700;
       opacity: 1 !important;
     }
   }
 
   .flatpickr-time {
-    border-top: 1px solid t.$colorBlack !important;
+    border-top: 1px solid t.$colorOne !important;
     background: transparent !important;
 
     *::selection {
-      background: t.$colorBlack !important;
-      color: t.$colorAccent !important;
+      background: t.$colorOne !important;
+      color: t.$colorThree !important;
     }
 
     .flatpickr-time-separator {
-      color: t.$colorBlack !important;
+      color: t.$colorOne !important;
       font-weight: 700;
     }
 
     .flatpickr-am-pm {
       background: transparent !important;
-      color: t.$colorBlack !important;
+      color: t.$colorOne !important;
       font-weight: 600;
 
       &:hover,
       &:focus,
       &:active {
         outline: none;
-        background: t.$colorBlack !important;
-        color: t.$colorAccent !important;
+        background: t.$colorOne !important;
+        color: t.$colorThree !important;
       }
     }
 
@@ -193,16 +193,16 @@
       input {
         background: transparent !important;
         box-shadow: none !important;
-        color: t.$colorBlack !important;
+        color: t.$colorOne !important;
         font-weight: 600;
 
         &:focus,
         &:active,
         &.active {
           outline: none !important;
-          background: t.$colorBlack !important;
+          background: t.$colorOne !important;
           box-shadow: none !important;
-          color: t.$colorAccent !important;
+          color: t.$colorThree !important;
         }
       }
 
@@ -211,29 +211,29 @@
         opacity: 1 !important;
 
         &.arrowUp::after {
-          border-bottom-color: t.$colorBlack !important;
+          border-bottom-color: t.$colorOne !important;
         }
 
         &.arrowDown::after {
-          border-top-color: t.$colorBlack !important;
+          border-top-color: t.$colorOne !important;
         }
       }
 
       &:hover,
       &:focus-within {
-        background: t.$colorBlack !important;
+        background: t.$colorOne !important;
 
         input {
           background: transparent !important;
-          color: t.$colorAccent !important;
+          color: t.$colorThree !important;
         }
 
         span {
           &.arrowUp::after {
-            border-bottom-color: t.$colorAccent !important;
+            border-bottom-color: t.$colorThree !important;
           }
           &.arrowDown::after {
-            border-top-color: t.$colorAccent !important;
+            border-top-color: t.$colorThree !important;
           }
 
           &:hover {
@@ -246,9 +246,9 @@
 
   .flatpickr-confirm {
     padding: 12px 10px;
-    border-top: 1px solid t.$colorBlack;
-    background: t.$colorBlack !important;
-    color: t.$colorAccent !important;
+    border-top: 1px solid t.$colorOne;
+    background: t.$colorOne !important;
+    color: t.$colorThree !important;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -259,14 +259,14 @@
     }
 
     &:hover {
-      background: t.$colorBlack !important;
-      color: t.$colorAccent !important;
+      background: t.$colorOne !important;
+      color: t.$colorThree !important;
       opacity: 0.85;
     }
 
     &.darkTheme {
-      background: t.$colorBlack !important;
-      color: t.$colorAccent !important;
+      background: t.$colorOne !important;
+      color: t.$colorThree !important;
     }
   }
 }
