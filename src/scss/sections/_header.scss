@@ -6,7 +6,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent;
 
   transition:
     transform 0.3s ease,
@@ -14,7 +13,7 @@
   will-change: transform;
 
   &--scrolled {
-    background-color: rgba(t.$colorFour, 0.8);
+    background-color: t.$colorTwo;
   }
 
   &--hidden {
@@ -24,23 +23,16 @@
   &__inner {
     width: 100%;
     @include t.flex-mix(space-between, center, row, 30px);
-    padding: 10px 15px 0 15px;
+    padding: 6px 15px 6px 15px;
 
-    @media (max-width:576px) {
-    padding: 10px 0 0 0;
-
+    @media (max-width: 576px) {
+      padding: 6px 0;
     }
   }
 
   .header__right {
     display: flex;
     align-items: center;
-    gap: 50px;
+    @include t.fluid-prop("gap", 22, 52, 320, 768);
   }
 }
-
-
-
-
-
-

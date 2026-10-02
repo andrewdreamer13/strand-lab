@@ -2,7 +2,7 @@
 .lang-switcher {
 
     &__link {
-      text-transform: capitalize;
+      text-transform: uppercase;
       font-size: 18px;
       font-weight: 500;
 
@@ -13,6 +13,8 @@
 
     &__divider {
        font-size: 18px;
+       margin: 0 3px;
+       font-weight: 500;
     }
 
   

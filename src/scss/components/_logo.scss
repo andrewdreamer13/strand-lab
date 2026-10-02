@@ -1,13 +1,28 @@
-
 @use "../tools" as t;
 
 .logo {
- 
+  @include t.flex-mix(center, center, row, 10px);
+
+  &__img {
+    @include t.fluid-prop("width", 38, 52, 320, 768);
+  }
+
+  &__text {
+    color: t.$colorThree;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1;
+    font-family: t.$fontTitle;
+    text-transform: capitalize;
+    @include t.fluid-prop("font-size", 22, 32, 320, 768);
+
+    @media (max-width: 360px) {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 768px) {
-.logo {
- 
-}
-  
+  .logo {
+  }
 }
