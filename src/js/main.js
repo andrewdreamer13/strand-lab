@@ -26,7 +26,7 @@ import { initTabs } from "./components/tabs.js";
 import { initCookieBanner } from "./components/cookieBanner.js";
 import { initCustomSelect } from "./components/customSelect.js";
 import { initFormHandler } from "./forms/formHandler.js";
-import { initResizableSwiper } from "./services/matchMediaSlider.js";
+// import { initResizableSwiper } from "./services/matchMediaSlider.js";
 import {initMaps} from "./services/lazyMapLoader.js";
 import { initVideoLoader } from "./services/lazyVideoLoader.js";
 import { splitTextIntoSpans } from "./services/splitText.js";
@@ -37,7 +37,7 @@ import { initLongTextWatcher } from "./helpers/longTextWatcher.js";
 import { initLazyImages } from "./helpers/lazyImages.js";
 import { initTextareaResize } from "./helpers/textareaAutoResize.js";
 import { initStickyHeader } from "./services/stickyHeader.js";
-
+import {initSymptoms} from "./components/simptoms.js"
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("The project works");
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCustomSelect("#cities", optionsData.cities);
   initCustomSelect("#countries", optionsData.countries);
   initFormHandler("#form1");
-  initResizableSwiper();
+  // initResizableSwiper();
   initMaps();
   initVideoLoader();
   initDatePicker();
@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       initLazyImages();
       initTextareaResize();
       initStickyHeader();
+      initSymptoms();
   // initUpButton(".footer__up-button");
 
 

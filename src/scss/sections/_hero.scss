@@ -4,7 +4,6 @@
   display: grid;
   position: relative;
   padding-top: 72px;
-  border-bottom: 1px solid;
   isolation: isolate;
 
   @media (max-width: 768px) {
@@ -66,6 +65,8 @@
     font-weight: 500;
     text-transform: capitalize;
     @include t.fluid-prop("font-size", 14, 24, 320, 1440);
+   letter-spacing: 1px;
+
 
     &::after {
       position: absolute;
@@ -111,7 +112,7 @@
     font-size: 18px;
     text-wrap: balance;
     @include t.fluid-prop("font-size", 14, 18, 320, 1440);
-
+    color: rgba(t.$colorOne, 0.8);
     @media (max-width: 768px) {
       text-align: center;
     }

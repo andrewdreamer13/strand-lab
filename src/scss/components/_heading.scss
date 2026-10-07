@@ -1,0 +1,60 @@
+@use "../tools" as t;
+
+.heading {
+  width: 100%;
+  margin: 0 auto 60px auto;
+  @include t.flex-mix(center, center, column);
+
+  &__label {
+    position: relative;
+    margin-bottom: 10px;
+    color: t.$colorThree;
+    font-weight: 500;
+    text-transform: capitalize;
+    @include t.fluid-prop("font-size", 14, 18, 320, 1440);
+    line-height: 1;
+    letter-spacing: 1px;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 110%;
+      width: 30%;
+      // transform: translateY(-50%);
+      background-color: t.$colorThree;
+      content: "";
+      @include t.fluid-prop("height", 1, 2, 320, 1440);
+    }
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      right: 110%;
+      width: 30%;
+      // transform: translateY(-50%);
+      background-color: t.$colorThree;
+      content: "";
+      @include t.fluid-prop("height", 1, 2, 320, 1440);
+    }
+  }
+
+  &__title {
+    font-family: t.$fontTitle;
+    @include t.fluid-prop("font-size", 24, 48, 320, 1440);
+    max-width: fit-content;
+    margin-bottom: 24px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.5px;
+    text-transform: capitalize;
+    text-wrap: balance;
+  }
+
+  &__description {
+    max-width: 620px;
+    color: rgba(t.$colorOne, 0.8);
+    text-align: center;
+    text-wrap: balance;
+    @include t.fluid-prop("font-size", 14, 18, 320, 1440);
+  }
+}
