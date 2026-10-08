@@ -15,7 +15,7 @@
     padding-bottom: 25px !important;
     touch-action: pan-y !important;
 
-    @media (max-width: 768px) {
+    @media (max-width: 560px) {
       padding-top: 0 !important;
     }
   }
@@ -25,6 +25,7 @@
     grid-template-columns: repeat(3, minmax(280px, 386px));
     justify-content: space-between;
     gap: 18px;
+
 
     @media (max-width: 1024px) {
       display: flex !important;
@@ -73,7 +74,7 @@
       transform: scale(0.95);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 560px) {
       display: none !important;
     }
   }
@@ -103,6 +104,8 @@
     aspect-ratio: 4 / 3;
     width: 100%;
     cursor: pointer;
+  
+
 
     @media (max-width: 1024px) {
       flex-shrink: 0;
@@ -127,6 +130,7 @@
     overflow: hidden;
     border-radius: 12px;
     background-color: t.$colorOne;
+    
 
     @media (hover: hover) {
       &:hover {

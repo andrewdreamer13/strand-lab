@@ -1,0 +1,92 @@
+@use "../tools" as t;
+
+.treatments {
+  width: 100%;
+  @include t.fluid-prop("padding-top", 40, 120, 320, 1200);
+  @include t.fluid-prop("padding-bottom", 40, 160, 320, 1200);
+
+  &__heading {
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    @include t.fluid-prop("gap", 24, 32, 320, 1200);
+    margin-bottom: 56px;
+    @include t.fluid-prop("margin-bottom", 24, 32, 320, 1200);
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    border-radius: 12px;
+    background-color: t.$colorOne;
+    color: t.$colorTwo;
+    @include t.fluid-prop("padding", 14, 28, 320, 1200);
+    box-shadow: 4px 4px 10px rgba(t.$colorOne, 0.8);
+  }
+
+  &__item-title {
+    font-family: t.$fontTitle;
+    @include t.fluid-prop("font-size", 20, 32, 320, 1440);
+    max-width: fit-content;
+    margin-bottom: 6px;
+    color: t.$colorTwo;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: capitalize;
+    text-wrap: balance;
+    filter: brightness(110%);
+  }
+
+  &__item-subtitle {
+    margin-bottom: 16px;
+    color: rgba(t.$colorTwo, 0.8);
+    @include t.fluid-prop("font-size", 16, 20, 320, 1440);
+  }
+
+  &__item-description {
+    color: rgba(t.$colorTwo, 0.6);
+    @include t.fluid-prop("font-size", 14, 18, 320, 1440);
+  }
+
+  &__cta {
+    width: 100%;
+    @include t.flex-mix(space-between, center, row, 20px);
+    border: 1px solid t.$colorThree;
+    border-radius: 12px;
+    @include t.fluid-prop("padding", 14, 28, 320, 1200);
+
+    @media (max-width: 768px) {
+      @include t.flex-mix(space-between, flex-start, column, 20px);
+    }
+  }
+
+  &__cta-heading {
+    max-width: 400px;
+    @include t.fluid-prop("max-width", 400, 650, 768, 1440);
+  }
+
+  &__cta-title {
+    font-family: t.$fontTitle;
+    @include t.fluid-prop("font-size", 20, 32, 320, 1440);
+    // max-width: fit-content;
+    margin-bottom: 6px;
+    color: t.$colorOne;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: capitalize;
+    text-wrap: balance;
+  }
+
+  &__cta-description {
+    color: rgba(t.$colorOne, 0.8);
+    @include t.fluid-prop("font-size", 14, 18, 320, 1440);
+  }
+
+  &__cta-button {
+  }
+}
