@@ -1,37 +1,35 @@
-
-/**
- * Initializes Swiper slider instances with bundled CSS styles and custom control configurations (pagination, navigation buttons, and scrollbars).
- * 
- * 1. `initSliders` - Serves as the entry point wrapper to trigger slider setup routines across the application.
- * 2. `initMainSlider` - Instantiates a centered, looping Swiper carousel for `.main-slider` containers with interactive navigation, pagination, and scrollbar controls.
- */
-
 import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
 
 export const initSliders = () => {
-  initMainSlider();
+  initAssessmentSlider();
 };
 
-const initMainSlider = () => {
-  const swiper = new Swiper(".main-slider", {
-    loop: true,
-    speed: 500,
-    centeredSlides: true,
-    slidesPerView: 2,
-    spaceBetween: 20,
-
-    pagination: {
-      el: ".swiper-pagination",
+const initAssessmentSlider = () => {
+  const steps = document.querySelectorAll(".assessment__step");
+  const swiper = new Swiper(".assessment__slider", {
+    speed: 1200,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    autoplay: {
+      delay: 3000,
     },
-
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
     },
-
-    scrollbar: {
-      el: ".swiper-scrollbar",
+    on: {
+      init() {
+        steps[0]?.classList.add("assessment__step--active");
+      },
+      slideChange() {
+        steps.forEach((step, index) => {
+          step.classList.toggle(
+            "assessment__step--active",
+            index === this.activeIndex,
+          );
+        });
+      },
     },
   });
 };

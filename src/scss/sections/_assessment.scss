@@ -1,0 +1,65 @@
+@use "../tools" as t;
+
+.assessment {
+  width: 100%;
+  @include t.fluid-prop("padding-top", 40, 160, 320, 1200);
+  @include t.fluid-prop("padding-bottom", 40, 160, 320, 1200);
+
+  &__inner {
+    @include t.flex-mix(center, stretch, row, 20px);
+
+    @media (max-width: 1024px) {
+      @include t.flex-mix(center, center, column, 20px);
+    }
+  }
+
+  &__steps {
+    width: 50%;
+    @include t.flex-mix(space-between, center, column, 10px);
+    @include t.flex-mix(space-around, center, column, 10px);
+
+    @media (max-width: 1024px) {
+      order: 2;
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+
+  &__step {
+    width: 100%;
+    padding-left: 10px;
+    border-left: 2px solid;
+    border-left-color: transparent;
+    transition: border-color 0.6s ease;
+  }
+
+  &__step--active {
+    border-left-color: t.$colorThree;
+  }
+
+  &__step-title {
+    font-family: t.$fontTitle;
+    @include t.fluid-prop("font-size", 24, 24, 320, 1440);
+    max-width: fit-content;
+    margin-bottom: 8px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: capitalize;
+    text-wrap: balance;
+  }
+
+  &__step-description {
+    color: rgba(t.$colorOne, 0.8);
+    @include t.fluid-prop("font-size", 14, 18, 320, 1440);
+  }
+
+  &__slider {
+    width: 50%;
+    border-radius: 12px;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+}
