@@ -23,10 +23,10 @@
 
   &__item {
     border-radius: 12px;
-    background-color: t.$colorOne;
+    // background-color: t.$colorOne;
     color: t.$colorTwo;
     @include t.fluid-prop("padding", 14, 28, 320, 1200);
-    box-shadow: 4px 4px 10px rgba(t.$colorOne, 0.8);
+    box-shadow: 3px 3px 8px rgba(t.$colorOne, 0.4);
   }
 
   &__item-title {
@@ -34,7 +34,7 @@
     @include t.fluid-prop("font-size", 20, 32, 320, 1440);
     max-width: fit-content;
     margin-bottom: 6px;
-    color: t.$colorTwo;
+    color: t.$colorOne;
     font-weight: 700;
     line-height: 1.2;
     text-transform: capitalize;
@@ -44,12 +44,12 @@
 
   &__item-subtitle {
     margin-bottom: 16px;
-    color: rgba(t.$colorTwo, 0.8);
+    color: rgba(t.$colorOne, 0.8);
     @include t.fluid-prop("font-size", 16, 20, 320, 1440);
   }
 
   &__item-description {
-    color: rgba(t.$colorTwo, 0.6);
+    color: rgba(t.$colorOne, 0.6);
     @include t.fluid-prop("font-size", 14, 18, 320, 1440);
   }
 
