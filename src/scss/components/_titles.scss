@@ -8,19 +8,23 @@
   &__text {
     display: block;
     font-family: t.$fontTitle;
-    @include t.fluid-prop("font-size", 24, 64, 320, 1440);
+    @include t.fluid-prop("font-size", 40, 64, 768, 1440);
     max-width: fit-content;
     line-height: 1.1;
     font-weight: 700;
      letter-spacing: -0.5px;
      text-transform: capitalize;
+     text-wrap: balance;
      @media (max-width: 768px) {
       text-align: center;
       max-width: 100%;
+    @include t.fluid-prop("font-size", 34, 54, 320, 768);
+
     }
   }
 
   @media (max-width: 768px) {
       text-align: center;
+
     }
 }

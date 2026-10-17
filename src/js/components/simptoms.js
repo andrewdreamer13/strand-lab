@@ -1,6 +1,6 @@
 import { createResizableSwiper } from "../services/matchMediaSlider.js"; // твой хелпер слайдера
 
-// 1. Логика для Hover на Desktop
+
 const initSymptomsDesktopHover = () => {
   if (!window.matchMedia("(hover: hover)").matches) return;
 
@@ -28,7 +28,7 @@ const initSymptomsDesktopHover = () => {
   });
 };
 
-// 2. Логика для Swiper на Mobile/Tablet
+
 const updateSwiperVideos = (swiper) => {
   swiper.slides.forEach((slide, index) => {
     const video = slide.querySelector(".symptoms__card-video");
@@ -98,7 +98,7 @@ const initSymptomsSwiper = () => {
   });
 };
 
-// 3. Единая точка входа для всей секции Symptoms
+
 export const initSymptoms = () => {
   const symptomsSection = document.querySelector(".symptoms");
   if (!symptomsSection) return; 

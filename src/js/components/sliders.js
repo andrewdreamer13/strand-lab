@@ -3,6 +3,7 @@ import "swiper/css/bundle";
 
 export const initSliders = () => {
   initAssessmentSlider();
+  initResultsSlider();
 };
 
 const initAssessmentSlider = () => {
@@ -29,6 +30,44 @@ const initAssessmentSlider = () => {
             index === this.activeIndex,
           );
         });
+      },
+    },
+  });
+};
+
+function updateRangeFraction(swiper, currentEl, totalEl) {
+  if (!currentEl || !totalEl) return;
+
+  currentEl.textContent = swiper.activeIndex + 1;
+  totalEl.textContent = swiper.slides.length;
+}
+
+const initResultsSlider = () => {
+  const isDesktop = window.innerWidth >= 576;
+  const currentEl = document.querySelector(".results__pagination-current");
+  const totalEl = document.querySelector(".results__pagination-total");
+  const swiper = new Swiper(".results__slider", {
+    speed: 800,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    effect: "fade",
+    effect: isDesktop ? "fade" : "slide",
+    fadeEffect: {
+      crossFade: true,
+    },
+    navigation: {
+      nextEl: ".results__button-next",
+      prevEl: ".results__button-prev",
+    },
+    on: {
+      init(swiper) {
+        updateRangeFraction(swiper, currentEl, totalEl);
+      },
+      slideChange(swiper) {
+        updateRangeFraction(swiper, currentEl, totalEl);
+      },
+      resize(swiper) {
+        updateRangeFraction(swiper, currentEl, totalEl);
       },
     },
   });

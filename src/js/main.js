@@ -37,7 +37,8 @@ import { initLongTextWatcher } from "./helpers/longTextWatcher.js";
 import { initLazyImages } from "./helpers/lazyImages.js";
 import { initTextareaResize } from "./helpers/textareaAutoResize.js";
 import { initStickyHeader } from "./services/stickyHeader.js";
-import {initSymptoms} from "./components/simptoms.js"
+import {initSymptoms} from "./components/simptoms.js";
+import {initImageComparisonSlider} from "./services/ImageComparisonSlider.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("The project works");
@@ -65,6 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
       initTextareaResize();
       initStickyHeader();
       initSymptoms();
+      initImageComparisonSlider(
+        ".results__case-card-images",
+        ".results__img-after-wrapper",
+        ".results__slider-handle",
+      );
   // initUpButton(".footer__up-button");
 
 

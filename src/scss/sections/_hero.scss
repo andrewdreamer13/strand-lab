@@ -7,7 +7,7 @@
   isolation: isolate;
 
   @media (max-width: 768px) {
-    padding-top: 0;
+     padding-top: 40px;
   }
 
   > * {
@@ -45,7 +45,7 @@
 
     @media (max-width: 768px) {
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
   }
   &__inner {

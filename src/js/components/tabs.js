@@ -1,9 +1,5 @@
 
-/**
- * Initializes accessible tab components using event delegation, managing active states and ARIA attributes across tab triggers and content panels.
- * 
- * 1. `initTabs` - Attaches click event delegation to tab container groups to switch active buttons and panels via `data-tab` targets while updating `aria-selected` and `aria-hidden` attributes.
- */
+
 
 export const initTabs = (tabsSelector) => {
   const tabsGroups = document.querySelectorAll(tabsSelector);

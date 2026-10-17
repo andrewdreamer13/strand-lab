@@ -79,7 +79,7 @@ async function convertImages() {
         }
       }
 
-      await sharp(filePath).webp({ quality: 80 }).toFile(destPath);
+      await sharp(filePath).webp({ quality: 100 }).toFile(destPath);
 
       console.log(
         `✅ Image converted/updated: ${path.basename(filePath)} -> webp`,

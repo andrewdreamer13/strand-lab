@@ -45,7 +45,7 @@ export default defineConfig(({ mode }) => {
             { name: "sortAttrs" },
           ],
         },
-        webp: { quality: 80 },
+        webp: { quality: 90 },
         avif: { quality: 70 },
       }),
 
