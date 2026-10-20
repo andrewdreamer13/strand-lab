@@ -3,8 +3,8 @@
 
 .results {
   width: 100%;
-  @include t.fluid-prop("padding-top", 40, 160, 320, 1200);
-  @include t.fluid-prop("padding-bottom", 40, 160, 320, 1200);
+  @include t.fluid-prop("padding-top", 40, 120, 320, 1200);
+  @include t.fluid-prop("padding-bottom", 40, 120, 320, 1200);
 
   &__slider.swiper {
     position: relative;

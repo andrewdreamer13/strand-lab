@@ -1,0 +1,57 @@
+@use "../tools" as t;
+
+.questions {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  @include t.fluid-prop("padding-top", 40, 120, 320, 1200);
+  @include t.fluid-prop("padding-bottom", 40, 120, 320, 1200);
+
+  &::before {
+    z-index: -1;
+    position: absolute;
+    top: clamp(-180px, calc(-180px + (100vw - 576px) * 0.10417), 30px);
+    left: 0;
+    width: 100vw;
+    height: 932px;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(t.$colorTwo, 1) 0%,
+        rgba(t.$colorTwo, 0.4) 20%,
+        rgba(t.$colorTwo, 0.4) 80%,
+        rgba(t.$colorTwo, 1) 100%
+      ),
+      url("/src/assets/img/webp/questions-bg.webp");
+
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    content: "";
+    pointer-events: none;
+
+    @media (max-width: 576px) {
+      top: clamp(-70px, calc(-20px - (100vw - 320px) * 0.19531), -20px);
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(t.$colorTwo, 1) 0%,
+          rgba(t.$colorTwo, 0.4) 20%,
+          rgba(t.$colorTwo, 0.4) 85%,
+          rgba(t.$colorTwo, 1) 100%
+        ),
+        url("/src/assets/img/webp/questions-bg-mob.webp");
+    }
+  }
+
+  &__heading {
+    z-index: 2;
+    position: relative;
+  }
+
+  &__accordion {
+    z-index: 2;
+    position: relative;
+  }
+}
