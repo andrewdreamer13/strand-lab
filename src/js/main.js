@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCookieBanner();
   initCustomSelect("#cities", optionsData.cities);
   initCustomSelect("#countries", optionsData.countries);
-  initFormHandler("#form1");
+  initFormHandler("#contacts-form");
   // initResizableSwiper();
   initMaps();
   initVideoLoader();

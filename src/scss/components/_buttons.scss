@@ -8,6 +8,12 @@
   color: t.$colorTwo;
   @include t.flex-mix(center, center);
 
+   &:disabled {
+    background-color: rgba(t.$colorOne, 0.2);
+    color: t.$colorSix;
+    cursor: not-allowed;
+  }
+
   @media (max-width: 768px) {
   }
 }

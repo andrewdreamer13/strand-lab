@@ -1,8 +1,4 @@
-/**
- * Handles deferred lazy-loading of iframe and custom interactive maps using IntersectionObserver as they approach the viewport.
- *
- * 1. `initMaps` - Observes designated map containers and initializes either an iframe or custom map module when they come near the viewport.
- */
+
 
 import { initIframeMap } from "../components/iframeMap";
 import { initCustomMap } from "../components/customMap";

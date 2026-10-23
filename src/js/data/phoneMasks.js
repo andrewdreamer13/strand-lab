@@ -1,9 +1,5 @@
 
-/**
- * Stores international telephone masking configurations and validation metadata for form input formatting.
- * 
- * 1. `phoneMasks` - Object mapping country codes to their corresponding display masks, country names, and expected digit lengths.
- */
+
 
 export const phoneMasks = {
   ua: {

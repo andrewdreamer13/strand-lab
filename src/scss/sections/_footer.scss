@@ -1,3 +1,154 @@
+@use "../tools" as t;
+
 .footer {
-  background-color: #fff;
+  width: 100%;
+  @include t.fluid-prop("padding-top", 40, 80, 320, 1200);
+  @include t.fluid-prop("padding-bottom", 40, 100, 320, 1200);
+  background-color: t.$colorOne;
+
+  &__inner {
+    @include t.flex-mix(space-between, flex-start, row, 20px);
+
+    @media (max-width: 1440px) {
+      @include t.flex-mix(space-around, flex-start, row, 20px);
+    }
+
+    @media (max-width: 1024px) {
+      @include t.flex-mix(center, center, column, 50px);
+    }
+  }
+
+  &__brand {
+    width: 100%;
+    max-width: 300px;
+    @include t.flex-mix(flex-start, flex-start, column, 0);
+
+    @media (max-width: 1024px) {
+      max-width: 500px;
+      @include t.flex-mix(flex-start, center, column, 0);
+    }
+  }
+
+  &__brand-desc {
+    width: 100%;
+    margin-bottom: 16px;
+    color: rgba(t.$colorTwo, 0.7);
+    text-align: left;
+    text-wrap: balance;
+    @include t.fluid-prop("font-size", 14, 18, 320, 1440);
+
+    @media (max-width: 1024px) {
+      text-align: center;
+    }
+
+    @media (max-width: 576px) {
+      max-width: 100%;
+    }
+  }
+
+  &__socials {
+    @include t.flex-mix(center, center, row, 20px);
+  }
+
+  &__socials-link {
+    width: 44px;
+    height: 44px;
+    @include t.flex-mix(center, center);
+    border: 1px solid;
+  }
+
+  &__socials-icon {
+    width: 24px;
+    height: 24px;
+    fill: t.$colorFour;
+  }
+
+  &__socials-icon--telegram {
+    fill: none;
+    stroke: t.$colorFour;
+  }
+
+  &__info-wrapper {
+    @include t.flex-mix(space-between, flex-start, row, 0);
+    @include t.fluid-prop("gap", 50, 100, 768, 1200);
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      max-width: 500px;
+    }
+    @media (max-width: 576px) {
+      @include t.flex-mix(space-between, center, column, 40px);
+    }
+  }
+
+  &__contacts {
+    @include t.flex-mix(flex-start, flex-start, column, 24px);
+  }
+
+  &__title {
+    color: t.$colorTwo;
+    font-weight: 500;
+    line-height: 1.2;
+    font-family: t.$fontText;
+    text-align: left;
+    text-wrap: balance;
+    @include t.fluid-prop("font-size", 16, 20, 320, 1200);
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__contacts-list {
+    @include t.flex-mix(flex-start, flex-start, column, 20px);
+  }
+
+  &__contacts-box {
+    width: 100%;
+    color: rgba(t.$colorTwo, 0.7);
+    font-weight: 500;
+    text-align: left;
+    text-wrap: balance;
+    @include t.fluid-prop("font-size", 14, 18, 320, 1440);
+    @include t.flex-mix(flex-start, flex-start, row, 12px);
+  }
+
+  &__phone-link {
+  }
+
+  &__contacts-icon {
+    fill: t.$colorFour;
+  }
+
+  &__contacts-icon--clock {
+    fill: none;
+    stroke: t.$colorFour;
+  }
+
+  &__nav {
+    @include t.flex-mix(flex-start, flex-start, column, 16px);
+
+    .nav__list {
+      @include t.flex-mix(flex-start, flex-start, column, 8px);
+    }
+
+    .nav__link {
+      width: 100%;
+      color: rgba(t.$colorTwo, 0.7);
+      font-weight: 500;
+      text-align: left;
+      text-wrap: balance;
+      @include t.fluid-prop("font-size", 14, 18, 320, 1440);
+    }
+  }
+}
+
+.logo--footer {
+  margin-bottom: 12px;
+  @media (max-width: 360px) {
+    .logo__text {
+      display: block;
+    }
+  }
 }

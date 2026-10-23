@@ -4,14 +4,13 @@
   width: max-content;
   height: 100%;
 
-
   &__list {
     width: 100%;
     @include t.flex-mix(flex-start, center, row, 30px);
   }
-  
 
-    @media (max-width: 1024px) {
+  @media (max-width: 1024px) {
+    &:not(&--footer) {
       display: block;
       visibility: hidden;
       z-index: 100;
@@ -42,7 +41,7 @@
         width: 100%;
         @include t.flex-mix(center, center, column, 30px);
       }
-    
+    }
   }
 
   &__link {
