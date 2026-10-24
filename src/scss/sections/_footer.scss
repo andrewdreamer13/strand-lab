@@ -54,13 +54,27 @@
     width: 44px;
     height: 44px;
     @include t.flex-mix(center, center);
-    border: 1px solid;
+
+    @media (hover: hover) {
+      &:hover .footer__socials-icon {
+        transform: scale(1.2);
+        fill: t.$colorThree;
+      }
+      &:hover .footer__socials-icon--telegram {
+        transform: scale(1.2);
+        fill: none;
+        stroke: t.$colorThree;
+      }
+    }
   }
 
   &__socials-icon {
     width: 24px;
     height: 24px;
     fill: t.$colorFour;
+    transition:
+      transform 0.3s ease,
+      fill 0.3s ease;
   }
 
   &__socials-icon--telegram {
@@ -114,9 +128,51 @@
     @include t.flex-mix(flex-start, flex-start, row, 12px);
   }
 
-  &__phone-link {
+  &__phone-link,
+  &__mail-link {
+    position: relative;
+    color: t.$colorOne;
+    transition: transform 0.3s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        .footer__contacts-text {
+          color: rgba(t.$colorTwo, 0);
+        }
+        .footer__contacts-text::before {
+          max-width: 100%;
+        }
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
   }
 
+  &__contacts-text {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    color: t.$colorTwo;
+    transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+    &::before {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 0;
+      height: 100%;
+      overflow: hidden;
+      content: attr(data-text);
+      color: t.$colorThree;
+      white-space: nowrap;
+      transition: max-width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+  }
   &__contacts-icon {
     fill: t.$colorFour;
   }
@@ -134,12 +190,39 @@
     }
 
     .nav__link {
+      position: relative;
       width: 100%;
       color: rgba(t.$colorTwo, 0.7);
       font-weight: 500;
       text-align: left;
       text-wrap: balance;
       @include t.fluid-prop("font-size", 14, 18, 320, 1440);
+      transition: color 0.3s ease;
+
+      &::after {
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        max-width: 0;
+        height: 100%;
+        overflow: hidden;
+        content: attr(data-text);
+        color: t.$colorThree;
+        white-space: nowrap;
+        transition: max-width 0.3s ease;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          color: rgba(t.$colorOne, 0);
+        }
+
+        &:hover::after {
+          max-width: 100%;
+          transition: max-width 0.3s ease;
+        }
+      }
     }
   }
 }

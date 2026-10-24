@@ -63,12 +63,18 @@
     border-radius: 8px;
     background-color: t.$colorTwo;
     box-shadow: 3px 3px 8px rgba(t.$colorOne, 0.4);
-    color: rgba(t.$colorOne, 0.7);
+    color: rgba(t.$colorOne, 0.8);
     font-family: inherit;
     transition: box-shadow 0.2s ease;
 
+      @media (hover: hover) {
+      &:hover {
+        filter: brightness(0.95);
+      }
+    }
+
     &::placeholder {
-      color: rgba(t.$colorOne, 0.6);
+      color: rgba(t.$colorOne, 0.8);
       font-size: 16px;
       font-family: inherit;
     }

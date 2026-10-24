@@ -6,12 +6,18 @@
   margin: 0 auto;
 
   &__item {
+    border-radius: 12px;
     background-color: t.$colorTwo;
     box-shadow: 3px 3px 8px rgba(t.$colorOne, 0.4);
-    border-radius: 12px;
-
+    transition: background-color 0.3s ease;
     &:not(:last-child) {
       margin-bottom: 5px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        filter: brightness(0.95);
+      }
     }
   }
 
@@ -19,11 +25,11 @@
   }
 
   &__button {
-   @include t.flex-mix(space-between, center, row, 20px);
+    @include t.flex-mix(space-between, center, row, 20px);
     width: 100%;
-    cursor: pointer;
     padding: 12px;
     padding-right: 20px;
+    cursor: pointer;
   }
 
   &__button[aria-expanded="true"] &__icon {
@@ -31,22 +37,22 @@
   }
 
   &__title {
-    text-align: left;
-     font-family: t.$fontText;
-      color: t.$colorOne;
+    color: t.$colorOne;
     font-weight: 500;
     line-height: 1.2;
-     text-wrap: balance;
+    font-family: t.$fontText;
+    text-align: left;
+    text-wrap: balance;
     @include t.fluid-prop("font-size", 16, 20, 320, 1200);
   }
 
   &__icon {
     flex-shrink: 0;
-    fill:none;
-    stroke: t.$colorThree;
-    
-    transition: transform 0.3s ease;
     width: 18px;
+    fill: none;
+    stroke: t.$colorThree;
+
+    transition: transform 0.3s ease;
   }
 
   &__content {
@@ -54,19 +60,15 @@
     padding: 0 10px;
     overflow: hidden;
     transition: max-height 0.3s ease;
-
   }
 
   &__content-body {
     padding: 10px 0;
-    
-
   }
 
   &__content-text {
     @include t.fluid-prop("font-size", 14, 18, 320, 1200);
     color: rgba(t.$colorOne, 0.7);
-     text-wrap: balance;
-
+    text-wrap: balance;
   }
 }

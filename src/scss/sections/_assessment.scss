@@ -16,7 +16,7 @@
   &__steps {
     width: 50%;
     @include t.flex-mix(space-between, center, column, 10px);
-    @include t.flex-mix(space-around, center, column, 10px);
+     //@include t.flex-mix(space-around, center, column, 10px);
 
     @media (max-width: 1024px) {
       order: 2;
@@ -27,14 +27,14 @@
 
   &__step {
     width: 100%;
-    padding-left: 10px;
-    border-left: 2px solid;
-    border-left-color: t.$colorTwo;
-    transition: border-color 0.6s ease;
+     border-radius: 12px;
+     background-color: t.$colorTwo;
+    @include t.fluid-prop("padding", 14, 28, 1024, 1440);
+    transition: box-shadow 0.6s ease;
   }
 
   &__step--active {
-    border-left-color: t.$colorThree;
+    box-shadow: 3px 3px 8px rgba(t.$colorOne, 0.4);
   }
 
   &__step-title {
