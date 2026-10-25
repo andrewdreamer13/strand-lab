@@ -1,14 +1,61 @@
+@use "../tools" as t;
 
 .success-modal {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+ border-radius: 12px;
+     background-color: t.$colorTwo;
+    @include t.fluid-prop("padding", 14, 28, 320, 1200);
+    box-shadow: 3px 3px 8px rgba(t.$colorOne, 0.4);
+
+  &__close-btn {
+    position: absolute;
+    top:8px;
+    right: 8px;
+    padding: 12px;
+    isolation: isolate;
+    color: rgba(t.$colorOne, 0.7);
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 1;
+    transition: color 0.3s ease, transform 0.3s ease;
+   
+    @media (hover: hover) {
+      &:hover {
+    color: t.$colorThree;
+       transform: scale(1.1);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
 
     &__icon {
+       margin-bottom: 30px;
+    text-align: center;
+    @include t.fluid-prop("font-size", 44, 84, 320, 768);
+    color: t.$colorThree;
+
     }
 
     &__title {
-      font-size: 35px;
+      color: t.$colorOne;
+    @include t.fluid-prop("font-size", 28, 44, 320, 768);
+    margin-bottom: 20px;
+    line-height: 1;
+    font-family: t.$fontTitle;
+    text-align: center;
+    font-weight: 700;
     }
 
     &__text {
-      font-size: 25px;
+      max-width: 400px;
+        margin: 0 auto;
+       color: rgba(t.$colorOne, 0.6);
+    @include t.fluid-prop("font-size", 14, 18, 320, 768);
+    text-align: center;
     }
 }

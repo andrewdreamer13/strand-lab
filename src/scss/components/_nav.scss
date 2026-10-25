@@ -44,7 +44,7 @@
     }
   }
 
-   &__link {
+  &__link {
     display: inline-block;
     position: relative;
     font-weight: 500;
@@ -55,6 +55,29 @@
      transition:
       color 0.3s ease;
 
-  
-   }
+    &::after {
+      position: absolute;
+      left: 0;
+        max-width: 0;
+      height: 100%;
+      content: attr(data-text);
+      color: t.$colorThree;
+        z-index: -1;
+        white-space: nowrap;
+    text-transform: capitalize;
+        overflow: hidden;
+         transition: max-width 0.3s ease;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: rgba(t.$colorOne, 0);
+      }
+
+      &:hover::after {
+        max-width: 100%;
+         
+      }
+    }
+  }
 }

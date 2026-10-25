@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initVideoLoader();
   initDatePicker();
   //  splitTextIntoSpans(".title");
-    initSyncDataAttrWithText(".footer__author", "text");
+    initSyncDataAttrWithText(".nav__link", "text");
     initLongTextWatcher(".main-title__word");
      initCurrentYear();
       initLazyImages();

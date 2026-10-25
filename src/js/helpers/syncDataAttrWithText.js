@@ -1,7 +1,4 @@
-export function initSyncDataAttrWithText(
-  selector = ".main-title__word",
-  attrName = "text",
-) {
+export function initSyncDataAttrWithText(selector, attrName = "text") {
   const elements = document.querySelectorAll(selector);
   if (!elements.length) return () => {};
 

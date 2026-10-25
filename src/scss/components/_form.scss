@@ -69,7 +69,7 @@
 
       @media (hover: hover) {
       &:hover {
-        filter: brightness(0.95);
+       background-color: rgba(t.$colorFour, 0.3);
       }
     }
 
