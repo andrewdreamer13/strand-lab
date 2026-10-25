@@ -7,6 +7,7 @@
   background-color: t.$colorOne;
 
   &__inner {
+    margin-bottom: 40px;
     @include t.flex-mix(space-between, flex-start, row, 20px);
 
     @media (max-width: 1440px) {
@@ -223,6 +224,68 @@
           transition: max-width 0.3s ease;
         }
       }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba(t.$colorFour, 0.5);
+    padding-top: 40px;
+  }
+
+  &__copyright {
+    text-align: center;
+      color: t.$colorFour;
+      margin-bottom: 16px;
+  }
+
+&__copyright-logo {
+    color: t.$colorThree;
+display: inline-block;
+margin-left: 10px;
+}
+  &__credits {
+    text-align: center;
+      color: t.$colorFour;
+  }
+
+  &__author {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    color: t.$colorFour;
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease;
+
+margin-left: 10px;
+
+    &::before {
+      font-weight: 600;
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      max-width: 0;
+      height: 100%;
+      overflow: hidden;
+      content: attr(data-text);
+      color: t.$colorThree;
+      white-space: nowrap;
+      transition: max-width 0.3s ease;
+    }
+    @media (hover: hover) {
+      &:hover::before {
+        max-width: 100%;
+      }
+
+      &:hover {
+        color: rgba(t.$colorFour, 0);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
     }
   }
 }
