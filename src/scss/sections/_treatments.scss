@@ -4,9 +4,53 @@
   width: 100%;
   @include t.fluid-prop("padding-top", 40, 120, 320, 1200);
   @include t.fluid-prop("padding-bottom", 40, 120, 320, 1200);
+  position: relative;
+    background-image: url("/src/assets/img/webp/treatments-bg.webp");
+  background-position: center calc(100% - 200px);
+  background-size: cover;
+  background-repeat: no-repeat;
 
+  @media (max-width: 768px) {
+    background-image: url("/src/assets/img/webp/treatments-bg-mob.webp");
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+  }
+  
+  &::before {
+    z-index: 1;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    background: linear-gradient(
+      to bottom,
+      rgba(t.$colorTwo, 1) 0%,
+      rgba(t.$colorTwo, 0.4) 20%,
+      rgba(t.$colorTwo, 0.4) 80%,
+      rgba(t.$colorTwo, 1) 100%
+    );
+    content: "";
+    pointer-events: none;
+
+    @media (max-width: 768px) {
+      background: linear-gradient(
+        to bottom,
+        rgba(t.$colorTwo, 1) 0%,
+        rgba(t.$colorTwo, 0.4) 35%,
+        rgba(t.$colorTwo, 0.4) 70%,
+        rgba(t.$colorTwo, 1) 100%
+      );
+    }
+  }
+&__heading {
+   position: relative;
+    z-index: 2;
+}
 
   &__list {
+    position: relative;
+    z-index: 2;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
@@ -51,6 +95,8 @@
   }
 
   &__cta {
+     position: relative;
+    z-index: 2;
     width: 100%;
     @include t.flex-mix(space-between, center, row, 20px);
     border: 1px solid t.$colorThree;
