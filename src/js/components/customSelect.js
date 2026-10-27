@@ -1,10 +1,4 @@
-/**
- * Initializes accessible custom select components with support for dynamic option rendering, single-open instance management, and full mouse and keyboard navigation.
- *
- * 1. `initCustomSelect` - Dynamically populates options, creates internal state handlers, and initializes event bindings for custom select dropdown elements.
- * 2. `initMouseEvents` - Attaches click listeners for toggling dropdown state, selecting options, and closing the menu when clicking outside.
- * 3. `initKeyboardEvents` - Configures keyboard navigation (Arrow keys, Enter, Space, Escape, Tab) for accessible option selection and focus management.
- */
+
 
 let currentlyOpenSelect = null;
 

@@ -49,6 +49,11 @@
     text-transform: capitalize;
     text-wrap: balance;
     text-align: center;
+
+    
+     &--ru {
+      text-transform: none;
+     }
   }
 
   &__description {

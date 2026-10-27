@@ -176,6 +176,10 @@
     text-wrap: balance;
     filter: brightness(110%);
 
+     &--ru {
+      text-transform: none;
+     }
+
     @media (max-width: 768px) {
       @include t.fluid-prop("font-size", 20, 30, 320, 768);
     }

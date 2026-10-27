@@ -1,4 +1,3 @@
-
 import { defineConfig } from "vite";
 import path from "path";
 import viteImagemin from "vite-plugin-imagemin";
@@ -91,7 +90,9 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         input: {
           main: path.resolve(__dirname, "index.html"),
+          ru: path.resolve(__dirname, "ru/index.html"),
           404: path.resolve(__dirname, "404.html"),
+          ru404: path.resolve(__dirname, "ru/404.html"), 
         },
         output: {
           sanitizeFileName(name) {

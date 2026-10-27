@@ -46,6 +46,10 @@
     line-height: 1.2;
     text-transform: capitalize;
     text-wrap: balance;
+
+     &--ru {
+      text-transform: none;
+     }
   }
 
   &__step-description {

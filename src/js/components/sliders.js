@@ -1,5 +1,11 @@
-import Swiper from "swiper/bundle";
-import "swiper/css/bundle";
+import Swiper from "swiper";
+import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+
+Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
 
 export const initSliders = () => {
   initAssessmentSlider();
