@@ -1,0 +1,7 @@
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+# Host & Sitemap
+Sitemap: https://andrewdreamer13.github.io/strand-lab/sitemap.xml
