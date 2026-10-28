@@ -1,9 +1,5 @@
 
-/**
- * Manages the display timing, user interactions, and local storage persistence for the cookie consent banner.
- * 
- * 1. `initCookieBanner` - Checks `localStorage` for saved consent preferences, displays the banner after a 1.5-second delay if no choice is recorded, and persists the user's decision ('accepted' or 'declined') upon interaction.
- */
+
 
 export const initCookieBanner = () => {
   const banner = document.getElementById("cookieBanner");

@@ -1,24 +1,9 @@
-/**
- * Handles form initialization, dynamic multi-country phone input masking, real-time input validation, and asynchronous form submission.
- *
- * 1. `initFormHandler` - Attaches validation, phone mask formatting, and submit event handlers to target form elements.
- * 2. `initPhoneMask` - Applies automatic phone masking and country code formatting to telephone inputs based on user input and country patterns.
- * 3. `validateField` - Performs validation on required fields, names, email addresses, and phone numbers, updating error UI states accordingly.
- * 4. `handleFormSubmit` - Asynchronously sends form data via Fetch API, toggles UI loading states, resets fields upon success, and triggers a confirmation modal.
- */
-
 import { phoneMasks } from "../data/phoneMasks.js";
 import { openModal } from "../components/modalManager.js";
+import { errorMessages as translations } from "../data/errorMessages.js";
 
-const errorMessages = {
-  empty: "This field is required",
-  shortName: "Name must be at least 2 characters",
-  invalidName: "Only letters and spaces allowed",
-  invalidEmail: "Please enter a valid email address",
-  invalidPhone: "Invalid phone number for selected country",
-  success: "Looks good!",
-  privacyConsent: "Please accept the Privacy Policy to continue",
-};
+const currentLang = document.documentElement.lang || "en";
+const errorMessages = translations[currentLang] || translations.en;
 
 export function initFormHandler(formSelector) {
   let selector = formSelector || "[data-form]";
@@ -48,7 +33,6 @@ export function initFormHandler(formSelector) {
 
     initPhoneMask(form);
 
-    /////
     const consentCheckbox = form.querySelector('input[name="privacy-consent"]');
     const submitBtn = form.querySelector(".form__submit");
 
@@ -63,7 +47,6 @@ export function initFormHandler(formSelector) {
     }
 
     updateSubmitState();
-    ////
 
     let isFormActive = false;
 
@@ -367,10 +350,12 @@ async function handleFormSubmit(form) {
     ? submitBtn.querySelector("span") || submitBtn
     : null;
 
-  const originalText = btnTextEl ? btnTextEl.textContent : "Submit";
+  const originalText = btnTextEl
+    ? btnTextEl.textContent
+    : errorMessages.ui.submit;
 
   if (submitBtn && btnTextEl) {
-    btnTextEl.textContent = "Sending...";
+    btnTextEl.textContent = errorMessages.ui.sending;
     submitBtn.disabled = true;
   }
 
@@ -406,13 +391,16 @@ async function handleFormSubmit(form) {
       if (successModal) {
         openModal(successModal);
       } else {
-        alert("Success! Your message has been sent.");
+        alert(errorMessages.ui.successAlert);
       }
     } else {
-      alert("Error: " + (data.message || "Something went wrong"));
+      alert(
+        errorMessages.ui.errorPrefix +
+          (data.message || errorMessages.ui.defaultError),
+      );
     }
   } catch (error) {
-    alert("Connection error. Please try again later.");
+    alert(errorMessages.ui.connectionError);
     console.error("[FormHandler Fetch Error]:", error);
   } finally {
     if (submitBtn && btnTextEl) {
