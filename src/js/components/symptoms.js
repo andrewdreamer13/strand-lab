@@ -1,4 +1,4 @@
-import { createResizableSwiper } from "../services/matchMediaSlider.js"; // твой хелпер слайдера
+import { createResizableSwiper } from "../services/matchMediaSlider.js"; 
 
 
 const initSymptomsDesktopHover = () => {
