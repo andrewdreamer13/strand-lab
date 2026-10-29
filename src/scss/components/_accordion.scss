@@ -24,6 +24,7 @@
     border-radius: 12px;
     background-color: t.$colorTwo;
     cursor: pointer;
+     outline-offset: 2px;
 
     @media (hover: hover) {
       &:hover {

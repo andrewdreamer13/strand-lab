@@ -11,7 +11,6 @@ import { ViteMinifyPlugin } from "vite-plugin-minify";
 
 const rootFolder = path.basename(path.resolve());
 
-// Вспомогательная функция для рекурсивного поиска всех HTML-файлов в dist
 function getHtmlFiles(dir, baseDir = dir) {
   let results = [];
   const list = fs.readdirSync(dir);
@@ -150,9 +149,9 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         input: {
           main: path.resolve(__dirname, "index.html"),
-          ru: path.resolve(__dirname, "ru/index.html"),
+          ru: path.resolve(__dirname, "de/index.html"),
           404: path.resolve(__dirname, "404.html"),
-          ru404: path.resolve(__dirname, "ru/404.html"),
+          ru404: path.resolve(__dirname, "de/404.html"),
         },
         output: {
           sanitizeFileName(name) {
