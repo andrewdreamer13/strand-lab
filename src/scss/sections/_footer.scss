@@ -198,8 +198,8 @@
       text-align: left;
       text-wrap: balance;
       @include t.fluid-prop("font-size", 16, 18, 320, 1440);
-      transition: color 0.3s ease;
       letter-spacing: 1px;
+      transition: color 0.3s ease;
 
       &::after {
         z-index: -1;
@@ -229,42 +229,42 @@
   }
 
   &__bottom {
-    border-top: 1px solid rgba(t.$colorFour, 0.5);
     padding-top: 40px;
+    border-top: 1px solid rgba(t.$colorFour, 0.5);
+    @include t.fluid-prop("font-size", 14, 16, 320, 768);
   }
 
   &__copyright {
+    margin-bottom: 16px;
+    color: t.$colorFour;
     text-align: center;
-      color: t.$colorFour;
-      margin-bottom: 16px;
   }
 
-&__copyright-logo {
+  &__copyright-logo {
+    display: inline-block;
+    margin-left: 10px;
     color: t.$colorThree;
-display: inline-block;
-margin-left: 10px;
-font-size: 18px;
-}
+    @include t.fluid-prop("font-size", 16, 18, 320, 768);
+  }
   &__credits {
+    color: t.$colorFour;
     text-align: center;
-      color: t.$colorFour;
   }
 
   &__author {
-    font-weight: 600;
-    letter-spacing: 0.5px;
     position: relative;
+
+    margin-left: 10px;
     overflow: hidden;
     isolation: isolate;
     color: t.$colorFour;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     transition:
       transform 0.3s ease,
       color 0.3s ease;
 
-margin-left: 10px;
-
     &::before {
-      font-weight: 600;
       z-index: 1;
       position: absolute;
       left: 0;
@@ -273,6 +273,7 @@ margin-left: 10px;
       overflow: hidden;
       content: attr(data-text);
       color: t.$colorThree;
+      font-weight: 600;
       white-space: nowrap;
       transition: max-width 0.3s ease;
     }
@@ -296,7 +297,7 @@ margin-left: 10px;
   margin-bottom: 12px;
   @media (max-width: 360px) {
     .logo__text {
-       display: block;
+      display: block;
     }
   }
 }
