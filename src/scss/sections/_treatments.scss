@@ -91,7 +91,7 @@
 
   &__item-description {
     color: rgba(t.$colorOne, 0.6);
-    @include t.fluid-prop("font-size", 14, 18, 320, 1440);
+    @include t.fluid-prop("font-size", 16, 18, 320, 768);
   }
 
   &__cta {
@@ -116,7 +116,6 @@
   &__cta-title {
     font-family: t.$fontTitle;
     @include t.fluid-prop("font-size", 20, 32, 320, 1440);
-    // max-width: fit-content;
     margin-bottom: 6px;
     color: t.$colorOne;
     font-weight: 700;
@@ -127,9 +126,8 @@
 
   &__cta-description {
     color: rgba(t.$colorOne, 0.8);
-    @include t.fluid-prop("font-size", 14, 18, 320, 1440);
+    @include t.fluid-prop("font-size", 16, 18, 320, 768);
   }
 
-  &__cta-button {
-  }
+ 
 }

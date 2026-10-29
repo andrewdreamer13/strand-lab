@@ -1,4 +1,3 @@
-
 @use "../tools" as t;
 
 .results {
@@ -13,7 +12,7 @@
     touch-action: pan-y !important;
 
     @media (max-width: 576px) {
-      padding-top: 36px !important;
+      padding-top: 48px !important;
       padding-right: 12px;
       padding-left: 12px;
       border-radius: 12px;
@@ -176,9 +175,9 @@
     text-wrap: balance;
     filter: brightness(110%);
 
-     &--ru {
+    &--ru {
       text-transform: none;
-     }
+    }
 
     @media (max-width: 768px) {
       @include t.fluid-prop("font-size", 20, 30, 320, 768);
@@ -191,33 +190,34 @@
 
   &__info-description {
     color: rgba(t.$colorOne, 0.7);
-    @include t.fluid-prop("font-size", 14, 18, 768, 1440);
+    @include t.fluid-prop("font-size", 16, 18, 768, 1440);
 
     @media (max-width: 768px) {
-      @include t.fluid-prop("font-size", 14, 16, 320, 768);
+      @include t.fluid-prop("font-size", 16, 18, 320, 768);
     }
   }
 
   &__arrows {
-    display: flex !important;
+    @include t.flex-mix(space-between, center);
     position: absolute;
-    top: 0;
+    top: 4px;
     right: 20px;
     width: 120px;
     height: 46px;
-    @include t.flex-mix(space-between, center);
 
     @media (max-width: 576px) {
+      top: 6px;
       width: 100px;
-      height: 42px;
+      height: 40px;
     }
   }
 
   &__button-next,
   &__button-prev {
+    position: static !important;
     width: 44px;
-    height: 44px;
-    padding: 5px;
+    height: 40px;
+    margin: 0 !important;
     border-radius: 3px;
     background-color: rgba(t.$colorTwo, 0.5);
     color: t.$colorThree !important;
@@ -236,8 +236,8 @@
     }
 
     @media (max-width: 576px) {
-      width: 36px !important;
-      height: 36px !important;
+      width: 34px !important;
+      height: 34px !important;
       margin-bottom: -5px !important;
     }
   }

@@ -106,12 +106,12 @@
   }
 
   &__description {
-    max-width: 510px;
+    max-width: 460px;
     margin-bottom: 60px;
     font-weight: 500;
     font-size: 18px;
     text-wrap: balance;
-    @include t.fluid-prop("font-size", 14, 18, 320, 1440);
+    @include t.fluid-prop("font-size", 16, 18, 320, 768);
     color: rgba(t.$colorOne, 0.8);
     @media (max-width: 768px) {
       text-align: center;

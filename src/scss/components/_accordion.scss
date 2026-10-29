@@ -15,8 +15,6 @@
     }
   }
 
-  &__heading {
-  }
 
   &__button {
     @include t.flex-mix(space-between, center, row, 20px);
@@ -69,7 +67,7 @@
   }
 
   &__content-text {
-    @include t.fluid-prop("font-size", 14, 18, 320, 1200);
+    @include t.fluid-prop("font-size", 16, 18, 320, 768);
     color: rgba(t.$colorOne, 0.7);
     text-wrap: balance;
   }

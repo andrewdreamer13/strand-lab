@@ -66,6 +66,8 @@
     color: rgba(t.$colorOne, 0.8);
     font-family: inherit;
     transition: box-shadow 0.2s ease;
+      @include t.fluid-prop("font-size", 16, 18, 320, 768);
+
 
       @media (hover: hover) {
       &:hover {
@@ -75,7 +77,7 @@
 
     &::placeholder {
       color: rgba(t.$colorOne, 0.8);
-      font-size: 16px;
+      font-size: inherit;
       font-family: inherit;
     }
 

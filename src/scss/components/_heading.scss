@@ -61,6 +61,6 @@
     color: rgba(t.$colorOne, 0.8);
     text-align: center;
     text-wrap: balance;
-    @include t.fluid-prop("font-size", 14, 18, 320, 1440);
+    @include t.fluid-prop("font-size", 16, 18, 320, 768);
   }
 }

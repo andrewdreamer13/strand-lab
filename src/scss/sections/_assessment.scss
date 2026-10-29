@@ -54,7 +54,7 @@
 
   &__step-description {
     color: rgba(t.$colorOne, 0.8);
-    @include t.fluid-prop("font-size", 14, 18, 320, 1440);
+    @include t.fluid-prop("font-size", 16, 18, 320, 768);
   }
 
   &__slider {
