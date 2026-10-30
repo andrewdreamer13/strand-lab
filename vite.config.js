@@ -149,9 +149,9 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         input: {
           main: path.resolve(__dirname, "index.html"),
-          ru: path.resolve(__dirname, "de/index.html"),
+          de: path.resolve(__dirname, "de/index.html"),
           404: path.resolve(__dirname, "404.html"),
-          ru404: path.resolve(__dirname, "de/404.html"),
+          de404: path.resolve(__dirname, "de/404.html"),
         },
         output: {
           sanitizeFileName(name) {
